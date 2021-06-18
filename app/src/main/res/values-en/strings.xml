@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">StayFit</string>
+    <string name="tv_name">Name</string>
+    <string name="tv_lastName">Last Name</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_password">Password</string>
+    <string name="tv_gender">Gender</string>
+    <string name="tv_age">Age</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="btn_register">Register</string>
+</resources>

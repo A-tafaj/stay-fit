@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">StayFit</string>
+    <string name="tv_name">Emri</string>
+    <string name="tv_lastName">Mbiemri</string>
+    <string name="tv_email">Emaili</string>
+    <string name="tv_password">Fjalekalimi</string>
+    <string name="tv_gender">Gjinia</string>
+    <string name="tv_age">Mosha</string>
+    <string name="radio_male">Mashkull</string>
+    <string name="radio_female">Femer</string>
+    <string name="btn_register">Regjistrohu</string>
+</resources>
