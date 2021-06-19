@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity"
+android:orientation="vertical"
+android:gravity="center_vertical"
+android:padding="16dp">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/tv_email"
+    android:textSize="22sp"/>
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="22sp"
+    android:imeOptions="actionNext"
+    android:inputType="textEmailAddress"
+    android:id="@+id/etEmail"></EditText>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/tv_password"
+    android:textSize="22sp"/>
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="22sp"
+    android:imeOptions="actionDone"
+    android:inputType="textPassword"
+    android:id="@+id/etPassword"></EditText>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_register"
+        app:backgroundTint="@drawable/button_background"
+        android:background="@drawable/button_background"
+        android:textSize="22sp"
+        android:id="@+id/btnRegister"
+        android:layout_gravity="left"
+        android:layout_weight="1"></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@drawable/button_background"
+        android:background="@drawable/button_background"
+        android:text="@string/btn_login"
+        android:textSize="22sp"
+        android:id="@+id/btnLogin"
+        android:layout_gravity="right"
+        android:layout_weight="1"></Button>
+</LinearLayout>
+
+
+
+</LinearLayout>

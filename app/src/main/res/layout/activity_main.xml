@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
@@ -12,19 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/fit_icon"
+            android:contentDescription="@string/iv_icon"
             android:id="@+id/imgIcon"
             android:paddingVertical="0dp"
-            android:layout_centerHorizontal="true"></ImageView>
+            android:layout_centerHorizontal="true" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background1"
+            android:id="@+id/realtive_id1"
+            android:background="@drawable/register_background"
             android:padding="10dp"
             android:layout_below="@+id/imgIcon">
 
@@ -34,15 +35,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tv_name"
-                android:textSize="22sp"></TextView>
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvName"
+                android:labelFor="@+id/tvName"
                 android:imeOptions="actionNext"
-                android:inputType="textCapWords"></EditText>
+                android:inputType="textCapWords" />
 
             <TextView
                 android:id="@+id/tvLastName"
@@ -50,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etName"
                 android:text="@string/tv_lastName"
-                android:textSize="22sp"></TextView>
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/etlastName"
@@ -58,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvLastName"
                 android:imeOptions="actionNext"
-                android:inputType="textCapWords"></EditText>
+                android:inputType="textCapWords" />
 
             <TextView
                 android:id="@+id/tvEmail"
@@ -66,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/etlastName"
                 android:text="@string/tv_email"
-                android:textSize="22sp"></TextView>
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/etEmail"
@@ -74,7 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvEmail"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress"></EditText>
+                android:labelFor="@+id/tvEmail"
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:id="@+id/tvPassword"
@@ -82,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/etEmail"
                 android:text="@string/tv_password"
-                android:textSize="22sp"></TextView>
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/etPassword"
@@ -90,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvPassword"
                 android:imeOptions="actionNext"
-                android:inputType="textPassword"></EditText>
+                android:inputType="textPassword" />
 
             <TextView
                 android:id="@+id/tvGender"
@@ -98,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/etPassword"
                 android:text="@string/tv_gender"
-                android:textSize="22sp"></TextView>
+                android:textSize="22sp" />
 
             <RadioGroup
                 android:id="@+id/radioSex"
@@ -112,12 +115,14 @@
                     android:id="@+id/radioMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
                     android:checked="true"
                     android:text="@string/radio_male" />
 
                 <RadioButton
                     android:id="@+id/radioFemale"
                     android:layout_width="wrap_content"
+                    android:imeOptions="actionNext"
                     android:layout_height="wrap_content"
                     android:text="@string/radio_female" />
 
@@ -126,17 +131,28 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@drawable/button_background"
+                android:background="@drawable/button_background"
                 android:textSize="22sp"
                 android:id="@+id/btnRegister"
+                android:imeOptions="actionDone"
                 android:layout_below="@id/radioSex"
-                android:layout_alignParentRight="true"
-                android:text="@string/btn_register"
-                android:background="@drawable/background1"
-                ></Button>
+                android:layout_alignParentEnd="true"
+                android:text="@string/btn_register"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@drawable/button_background"
+                android:background="@drawable/button_background"
+                android:text="@string/btn_login"
+                android:textSize="22sp"
+                android:id="@+id/btnLogin"
+                android:layout_gravity="right"
+                android:layout_weight="1"></Button>
 
 
         </RelativeLayout>
-
+b
     </RelativeLayout>
 
 </RelativeLayout>

@@ -9,4 +9,9 @@
     <string name="radio_male">Male</string>
     <string name="radio_female">Female</string>
     <string name="btn_register">Register</string>
+    <string name="error_message">An error has occurred</string>
+    <string name="confirmation_message">Successfully saved data</string>
+    <string name="iv_icon">Icon</string>
+    <string name="btn_login">Kycu</string>
+    <string name="user_not_found">Perdoruesi nuk u gjet</string>
 </resources>

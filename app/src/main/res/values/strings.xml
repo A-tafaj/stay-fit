@@ -9,4 +9,10 @@
     <string name="radio_male">Mashkull</string>
     <string name="radio_female">Femer</string>
     <string name="btn_register">Regjistrohu</string>
+    <string name="error_message">Ka ndodhur nje gabim</string>
+    <string name="confirmation_message">Te dhenat u ruajten me sukses</string>
+    <string name="iv_icon">Ikona</string>
+    <string name="btn_login">Kycu</string>
+    <string name="user_not_found">Perdoruesi nuk u gjet</string>
+    <string name="wrong_credentials">Kredencialet jane gabim</string>
 </resources>
