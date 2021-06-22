@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static fiek.unipr.stayfit.MainActivity.hideSoftKeyboard;
+import static fiek.unipr.stayfit.RegisterActivity.hideSoftKeyboard;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,8 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setupUI(findViewById(R.id.realtive_id1));
-        getSupportActionBar().hide();
+        setupUI(findViewById(R.id.realtive_id2));
 
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
@@ -35,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginActivityIntent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent loginActivityIntent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(loginActivityIntent);
             }
         });
@@ -50,8 +49,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials),Toast.LENGTH_LONG).show();
                 else
                 {
-                    Intent mainActivityIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    mainActivityIntent.putExtra("email",etEmail.getText().toString());
+                    Intent mainActivityIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    //mainActivityIntent.putExtra("email",etEmail.getText().toString());
                     startActivity(mainActivityIntent);
                 }
             }
@@ -84,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
 
         return -1;
     }
+
     public void setupUI(View view) {
 
         // Set up touch listener for non-text box views to hide keyboard.

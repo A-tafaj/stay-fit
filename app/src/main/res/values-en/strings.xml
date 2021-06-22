@@ -14,4 +14,7 @@
     <string name="iv_icon">Icon</string>
     <string name="btn_login">Kycu</string>
     <string name="user_not_found">Perdoruesi nuk u gjet</string>
+    <string name="menu_foods">Ushqimet</string>
+    <string name="menu_exercises">Ushtrimet</string>
+    <string name="menu_profile">Profili</string>
 </resources>

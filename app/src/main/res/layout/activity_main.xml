@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:padding="16dp"
-    tools:context=".MainActivity"
+    tools:context=".RegisterActivity"
     android:background="#add8e6">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -41,6 +41,7 @@
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvName"
                 android:labelFor="@+id/tvName"
                 android:imeOptions="actionNext"
@@ -58,6 +59,7 @@
                 android:id="@+id/etlastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvLastName"
                 android:imeOptions="actionNext"
                 android:inputType="textCapWords" />
@@ -74,6 +76,7 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvEmail"
                 android:imeOptions="actionNext"
                 android:labelFor="@+id/tvEmail"
@@ -91,6 +94,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvPassword"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword" />
@@ -115,14 +119,12 @@
                     android:id="@+id/radioMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
                     android:checked="true"
                     android:text="@string/radio_male" />
 
                 <RadioButton
                     android:id="@+id/radioFemale"
                     android:layout_width="wrap_content"
-                    android:imeOptions="actionNext"
                     android:layout_height="wrap_content"
                     android:text="@string/radio_female" />
 
@@ -131,25 +133,11 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@drawable/button_background"
-                android:background="@drawable/button_background"
                 android:textSize="22sp"
                 android:id="@+id/btnRegister"
-                android:imeOptions="actionDone"
                 android:layout_below="@id/radioSex"
                 android:layout_alignParentEnd="true"
-                android:text="@string/btn_register"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@drawable/button_background"
-                android:background="@drawable/button_background"
-                android:text="@string/btn_login"
-                android:textSize="22sp"
-                android:id="@+id/btnLogin"
-                android:layout_gravity="right"
-                android:layout_weight="1"></Button>
-
+                android:text="@string/btn_register"></Button>
 
         </RelativeLayout>
 b

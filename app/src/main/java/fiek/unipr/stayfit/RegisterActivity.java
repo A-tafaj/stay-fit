@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-//import android.view.View;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -17,7 +17,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText etName, etLastName, etEmail, etPassword;
     RadioButton radio_checked;
     RadioGroup radio_group;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
 
         btnRegister.setOnClickListener(view -> {
-            SQLiteDatabase objDB = new DatabaseHelper(MainActivity.this).getWritableDatabase();
+            SQLiteDatabase objDB = new DatabaseHelper(RegisterActivity.this).getWritableDatabase();
             ContentValues contentValues = new ContentValues();
             contentValues.put(DatabaseModelHelper.UsersName, etName.getText().toString());
             contentValues.put(DatabaseModelHelper.UsersLastName, etLastName.getText().toString());
@@ -53,10 +53,12 @@ public class MainActivity extends AppCompatActivity {
             try {
                 long id1 = objDB.insert(DatabaseModelHelper.UsersTable, null, contentValues);
                 if(id1 >0){
-                    Toast.makeText(MainActivity.this, getString(R.string.confirmation_message), Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, getString(R.string.confirmation_message), Toast.LENGTH_LONG).show();
+                    Intent loginActivityIntent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(loginActivityIntent);
                 }
             } catch (Exception e) {
-                Toast.makeText(MainActivity.this, getString(R.string.error_message), Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, getString(R.string.error_message), Toast.LENGTH_LONG).show();
             }
             finally {
                 objDB.close();
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         if (!(view instanceof EditText)) {
             view.setOnTouchListener(new View.OnTouchListener() {
                 public boolean onTouch(View v, MotionEvent event) {
-                    hideSoftKeyboard(MainActivity.this);
+                    hideSoftKeyboard(RegisterActivity.this);
                     return false;
                 }
             });
