@@ -1,5 +1,6 @@
 package fiek.unipr.stayfit;
 
+import androidx.annotation.ContentView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import com.google.android.material.snackbar.Snackbar;
 import static fiek.unipr.stayfit.RegisterActivity.hideSoftKeyboard;
 
 public class LoginActivity extends AppCompatActivity {
@@ -46,10 +47,15 @@ public class LoginActivity extends AppCompatActivity {
                 if(retLogin==-1)
                     Toast.makeText(LoginActivity.this, getString(R.string.user_not_found),Toast.LENGTH_LONG).show();
                 else if(retLogin == 0)
+                {
+                    //ContentView contentView = findViewById(R.id.realtive_id1);
                     Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials),Toast.LENGTH_LONG).show();
+                    //Snackbar.make((View) contentView, R.string.wrong_credentials, Snackbar.LENGTH_SHORT).show();
+                }
                 else
                 {
-                    Intent mainActivityIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    Toast.makeText(LoginActivity.this, "Successfully logged in!",Toast.LENGTH_LONG).show();
+                    Intent mainActivityIntent = new Intent(LoginActivity.this, MainActivity.class);
                     //mainActivityIntent.putExtra("email",etEmail.getText().toString());
                     startActivity(mainActivityIntent);
                 }
