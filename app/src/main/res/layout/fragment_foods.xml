@@ -7,11 +7,11 @@
     tools:context=".foodsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="22dp"
-        android:gravity="center"
-        android:text="Foods Fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"
+        android:foregroundGravity="center"
+        android:paddingBottom="40dp"></androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

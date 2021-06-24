@@ -56,14 +56,14 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Toast.makeText(LoginActivity.this, "Successfully logged in!",Toast.LENGTH_LONG).show();
                     Intent mainActivityIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    //mainActivityIntent.putExtra("email",etEmail.getText().toString());
+                    mainActivityIntent.putExtra("email",etEmail.getText().toString());
                     startActivity(mainActivityIntent);
                 }
             }
         });
     }
 
-    private int LoginUser(String email, String password)
+    protected int LoginUser(String email, String password)
     {
         SQLiteDatabase objDb = new DatabaseHelper(LoginActivity.this).getReadableDatabase();
         Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable,new String[]{DatabaseModelHelper.UsersEmail,DatabaseModelHelper.UsersPassword},DatabaseModelHelper.UsersEmail+"=?",
@@ -89,6 +89,21 @@ public class LoginActivity extends AppCompatActivity {
 
         return -1;
     }
+/*    protected String LoginUser(String email)
+    {
+        SQLiteDatabase objDb = new DatabaseHelper(LoginActivity.this).getReadableDatabase();
+        Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable,new String[]{DatabaseModelHelper.UsersEmail},DatabaseModelHelper.UsersEmail+"=?",
+                new String[]{email},"","","");
+        if(cursor.getCount()>0)
+        {
+            cursor.moveToFirst();
+            String dbUsersName = cursor.getString(0);
+            cursor.close();
+            objDb.close();
+            return dbUsersName;
+        }
+        return "-1";
+    }*/
 
     public void setupUI(View view) {
 
