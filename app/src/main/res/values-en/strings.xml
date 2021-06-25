@@ -17,4 +17,5 @@
     <string name="menu_foods">Ushqimet</string>
     <string name="menu_exercises">Ushtrimet</string>
     <string name="menu_profile">Profili</string>
+    <string name="btn_capture">Kamera</string>
 </resources>
