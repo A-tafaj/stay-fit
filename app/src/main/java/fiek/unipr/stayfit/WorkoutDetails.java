@@ -1,5 +1,4 @@
-package com.example.workoutapp;
-
+package fiek.unipr.stayfit;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
