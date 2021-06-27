@@ -6,8 +6,13 @@ An android app that will display food nutritional values, advices to maintain a 
 
    1. Users can register and sign-in
    2. Users can see exercises
-   4. Users can see foods nutritions
-   3. Users can add and delete their weight, body fat percentage, water percentage and muscle percentage(..on the way)
+   3. Users can see foods nutritions
+   4. Users can add their weight for every Week or desired date( data is saved and read from Firebase)
+   5. User can use the camera to take his profile picture
+   6. Data from database is placed in dynamic lists with RecyclerView
+   7. Two external libraries are userd (get image form url & parse json)
+   8. Project uses multiple layouts, Relative, Linear, Constraint Layout and mutch more
+   9. Project uses basic and custom animations
     
 
 ## Getting Started
