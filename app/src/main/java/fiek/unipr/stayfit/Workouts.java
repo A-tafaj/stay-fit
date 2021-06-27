@@ -1,4 +1,4 @@
-package com.example.workoutapp;
+package fiek.unipr.stayfit;
 
 import android.graphics.drawable.Drawable;
 
