@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "783752997277",
-    "project_id": "stay-fit-67999",
-    "storage_bucket": "stay-fit-67999.appspot.com"
+    "project_number": "564253350583",
+    "project_id": "fireapp-43e43",
+    "storage_bucket": "fireapp-43e43.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:783752997277:android:dce7c5a31427862d51a774",
+        "mobilesdk_app_id": "1:564253350583:android:a857434f8962bd5855cb32",
         "android_client_info": {
           "package_name": "fiek.unipr.stayfit"
         }
       },
       "oauth_client": [
         {
-          "client_id": "783752997277-2fikvlsff0033s5obid7ssrhjie18n4f.apps.googleusercontent.com",
+          "client_id": "564253350583-kt00eje4ngce4ej3qplf4j1k5niqaaho.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD3bT6zq6fj-CFy2ZW_ZHuyb9Ed-0PnJo4"
+          "current_key": "AIzaSyC9uvE7q1ozDTXo8GqnbOuUY1e_O0Pe5nA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "783752997277-2fikvlsff0033s5obid7ssrhjie18n4f.apps.googleusercontent.com",
+              "client_id": "564253350583-kt00eje4ngce4ej3qplf4j1k5niqaaho.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
