@@ -45,3 +45,30 @@ An android app that will display food nutritional values, advices to maintain a 
 4. Run application on emulator 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+Programming language
+--------------------
+Java 
+
+
+Translations
+------------
+This Application supports English and Albanian language.
+
+Building Instruction
+====================
+
+Requirements
+------------
+
+  * Git
+  * Android SDK Build-Tools 30
+  * Android Support Repository
+ 
+
+Building with gradle
+--------------------
+
+#### 1. Connect your phone with USB
+
+#### 2. Build & Install
