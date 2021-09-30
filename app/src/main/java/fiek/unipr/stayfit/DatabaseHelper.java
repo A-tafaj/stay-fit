@@ -1,7 +1,6 @@
 package fiek.unipr.stayfit;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -20,17 +19,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
-    }
-    public DbResponse getData(){
-        DbResponse obj = new DbResponse();
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from " + DatabaseModelHelper.UsersTable, null);
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            obj.name = cursor.getString(cursor.getColumnIndex(DatabaseModelHelper.UsersName));
-            obj.lastName = cursor.getString(cursor.getColumnIndex(DatabaseModelHelper.UsersName));;
-        }
-        cursor.close();
-        return obj;
     }
 }

@@ -1,4 +1,5 @@
 package fiek.unipr.stayfit;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +19,7 @@ public class WorkoutDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_details);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent i = getIntent();
 

@@ -4,9 +4,9 @@
         android:title="@string/menu_foods"
         android:enabled="true"
         android:icon="@drawable/ic_foods" />
-    <item android:id="@+id/exercisesFragment"
+    <item android:id="@+id/fitActivity"
         android:title="@string/menu_exercises"
-        android:icon="@drawable/ic_exercises" />
+        android:icon="@drawable/ic_foods" />
     <item android:id="@+id/profileFragment"
         android:title="@string/menu_profile"
         android:icon="@drawable/ic_profile" />
