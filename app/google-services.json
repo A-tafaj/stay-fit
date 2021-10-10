@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "275406577315",
+    "project_id": "weight-afa33",
+    "storage_bucket": "weight-afa33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275406577315:android:033e44212be76122c12916",
+        "android_client_info": {
+          "package_name": "fiek.unipr.stayfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275406577315-329efsmu6gapflppag2j17vvr95gun1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdygu2KKL27l-b4Asexc1Grdn6Nrx0NNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275406577315-329efsmu6gapflppag2j17vvr95gun1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
