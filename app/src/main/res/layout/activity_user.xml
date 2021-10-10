@@ -8,15 +8,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter the Weight with the related Week"/>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etWeek"></EditText>
+            android:hint="week"
+            android:id="@+id/etWeek" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etWeight"></EditText>
+            android:hint="weight"
+            android:id="@+id/etWeight" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="Submit"
                 android:id="@+id/button"></Button>
             <Space
                 android:layout_width="wrap_content"
@@ -34,6 +47,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Read"
                 android:layout_weight="1"
                 android:id="@+id/button2"></Button>
         </LinearLayout>

@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "275406577315",
-    "project_id": "weight-afa33",
-    "storage_bucket": "weight-afa33.appspot.com"
+    "project_number": "592124553167",
+    "firebase_url": "https://weeknweight-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "weeknweight",
+    "storage_bucket": "weeknweight.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:275406577315:android:033e44212be76122c12916",
+        "mobilesdk_app_id": "1:592124553167:android:361ae25f6ea514649614ba",
         "android_client_info": {
           "package_name": "fiek.unipr.stayfit"
         }
       },
       "oauth_client": [
         {
-          "client_id": "275406577315-329efsmu6gapflppag2j17vvr95gun1f.apps.googleusercontent.com",
+          "client_id": "592124553167-an8n76ua42hoqofeac4acdljfrjd2its.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBdygu2KKL27l-b4Asexc1Grdn6Nrx0NNg"
+          "current_key": "AIzaSyDsV5eeKWokrep9PH7736XVGwSrTEL5k08"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "275406577315-329efsmu6gapflppag2j17vvr95gun1f.apps.googleusercontent.com",
+              "client_id": "592124553167-an8n76ua42hoqofeac4acdljfrjd2its.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -14,6 +14,7 @@
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_register.xml" value="0.2828125" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_show.xml" value="0.128125" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_user.xml" value="0.4" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/fragment_foods.xml" value="0.1" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/item.xml" value="0.2328125" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/recycler_items.xml" value="0.1828125" />
@@ -21,7 +22,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
