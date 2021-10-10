@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.models;
 
 public class Model {
     String week;

@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +16,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import fiek.unipr.stayfit.helpers.DatabaseHelper;
+import fiek.unipr.stayfit.helpers.DatabaseModelHelper;
+import fiek.unipr.stayfit.R;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText etName, etLastName, etEmail, etPassword;

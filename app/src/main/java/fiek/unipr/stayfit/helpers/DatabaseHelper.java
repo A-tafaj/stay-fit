@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.helpers;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+
+import fiek.unipr.stayfit.R;
 
 public class UserActivity extends AppCompatActivity {
 

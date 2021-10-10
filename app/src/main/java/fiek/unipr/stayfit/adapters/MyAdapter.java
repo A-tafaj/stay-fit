@@ -1,4 +1,5 @@
-package fiek.unipr.stayfit;
+/*
+package fiek.unipr.stayfit.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import fiek.unipr.stayfit.models.Model;
+import fiek.unipr.stayfit.R;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
@@ -54,3 +58,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 }
+*/

@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -10,6 +10,9 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import fiek.unipr.stayfit.R;
+import fiek.unipr.stayfit.fragments.profileFragment;
 
 public class MainActivity extends AppCompatActivity {
 

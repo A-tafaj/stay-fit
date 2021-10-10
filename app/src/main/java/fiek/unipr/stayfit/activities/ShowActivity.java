@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.activities;
 
 
 import android.os.Bundle;
@@ -16,12 +16,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import fiek.unipr.stayfit.models.Model;
+//import fiek.unipr.stayfit.adapters.MyAdapter;
+import fiek.unipr.stayfit.R;
+
 public class ShowActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root = db.getReference().child("Users");
-    private MyAdapter adapter;
+//    private MyAdapter adapter;
     private ArrayList<Model> list;
 
     @Override
@@ -34,9 +38,9 @@ public class ShowActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
-        adapter = new MyAdapter(this ,list );
+ //       adapter = new MyAdapter(this ,list );
 
-        recyclerView.setAdapter(adapter);
+   //     recyclerView.setAdapter(adapter);
 
         root.addValueEventListener(new ValueEventListener() {
             @Override
@@ -46,7 +50,7 @@ public class ShowActivity extends AppCompatActivity {
                     Model model = dataSnapshot.getValue(Model.class);
                     list.add(model);
                 }
-                adapter.notifyDataSetChanged();
+       //         adapter.notifyDataSetChanged();
             }
 
             @Override
