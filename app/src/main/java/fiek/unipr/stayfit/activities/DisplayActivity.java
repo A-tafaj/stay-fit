@@ -1,11 +1,13 @@
-package fiek.unipr.stayfit;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
+package fiek.unipr.stayfit.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+import fiek.unipr.stayfit.R;
 
 public class DisplayActivity extends AppCompatActivity {
 

@@ -1,14 +1,12 @@
-package fiek.unipr.stayfit;
-
-import androidx.appcompat.app.AppCompatActivity;
+package fiek.unipr.stayfit.activities;
 
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -16,6 +14,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import fiek.unipr.stayfit.R;
+import fiek.unipr.stayfit.helpers.DatabaseHelper;
+import fiek.unipr.stayfit.helpers.DatabaseModelHelper;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText etName, etLastName, etEmail, etPassword;
@@ -35,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
 
-        radio_group = (RadioGroup)findViewById(R.id.radioSex);
+        radio_group = findViewById(R.id.radioSex);
         int selectedId = radio_group.getCheckedRadioButtonId();
         radio_checked = findViewById(selectedId);
 
@@ -52,24 +56,24 @@ public class RegisterActivity extends AppCompatActivity {
 
             try {
                 long id1 = objDB.insert(DatabaseModelHelper.UsersTable, null, contentValues);
-                if(id1 >0){
+                if (id1 > 0) {
                     Toast.makeText(RegisterActivity.this, getString(R.string.confirmation_message), Toast.LENGTH_LONG).show();
                     Intent loginActivityIntent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(loginActivityIntent);
                 }
             } catch (Exception e) {
                 Toast.makeText(RegisterActivity.this, getString(R.string.error_message), Toast.LENGTH_LONG).show();
-            }
-            finally {
+            } finally {
                 objDB.close();
             }
         });
     }
+
     public static void hideSoftKeyboard(Activity activity) {
         InputMethodManager inputMethodManager =
                 (InputMethodManager) activity.getSystemService(
                         Activity.INPUT_METHOD_SERVICE);
-        if(inputMethodManager.isAcceptingText()){
+        if (inputMethodManager.isAcceptingText()) {
             inputMethodManager.hideSoftInputFromWindow(
                     activity.getCurrentFocus().getWindowToken(),
                     0

@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit.model;
+package fiek.unipr.stayfit.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,7 +7,7 @@ public class FoodsModel implements Parcelable {
     private String name;
     private String url;
     private String tags;
-    private Nutritions nutritions;
+    private Nutrition nutrition;
 
     protected FoodsModel(Parcel in) {
         name = in.readString();
@@ -39,12 +39,12 @@ public class FoodsModel implements Parcelable {
         this.tags = tags;
     }
 
-    public Nutritions getNutritions() {
-        return nutritions;
+    public Nutrition getNutritions() {
+        return nutrition;
     }
 
-    public void setNutritions(Nutritions nutritions) {
-        this.nutritions = nutritions;
+    public void setNutrition(Nutrition nutrition) {
+        this.nutrition = nutrition;
     }
 
     public static final Creator<FoodsModel> CREATOR = new Creator<FoodsModel>() {

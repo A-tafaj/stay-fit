@@ -1,4 +1,4 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.helpers;
 
 public class DatabaseModelHelper {
     public static String UsersTable = "Users";

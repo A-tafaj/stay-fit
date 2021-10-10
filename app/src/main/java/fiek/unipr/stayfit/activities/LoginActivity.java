@@ -1,6 +1,5 @@
-package fiek.unipr.stayfit;
+package fiek.unipr.stayfit.activities;
 
-import androidx.annotation.ContentView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,13 +12,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.google.android.material.snackbar.Snackbar;
-import static fiek.unipr.stayfit.RegisterActivity.hideSoftKeyboard;
+
+import static fiek.unipr.stayfit.activities.RegisterActivity.hideSoftKeyboard;
+
+import fiek.unipr.stayfit.helpers.DatabaseHelper;
+import fiek.unipr.stayfit.helpers.DatabaseModelHelper;
+import fiek.unipr.stayfit.R;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText etEmail, etPassword;
     Button btnRegister, btnLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,66 +48,42 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int retLogin = LoginUser(etEmail.getText().toString(), etPassword.getText().toString());
-                if(retLogin==-1)
-                    Toast.makeText(LoginActivity.this, getString(R.string.user_not_found),Toast.LENGTH_LONG).show();
-                else if(retLogin == 0)
-                {
-                    //ContentView contentView = findViewById(R.id.realtive_id1);
-                    Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials),Toast.LENGTH_LONG).show();
-                    //Snackbar.make((View) contentView, R.string.wrong_credentials, Snackbar.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(LoginActivity.this, "Successfully logged in!",Toast.LENGTH_LONG).show();
+                if (retLogin == -1)
+                    Toast.makeText(LoginActivity.this, getString(R.string.user_not_found), Toast.LENGTH_LONG).show();
+                else if (retLogin == 0) {
+                    Toast.makeText(LoginActivity.this, getString(R.string.wrong_credentials), Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Successfully logged in!", Toast.LENGTH_LONG).show();
                     Intent mainActivityIntent = new Intent(LoginActivity.this, MainActivity.class);
-                    mainActivityIntent.putExtra("email",etEmail.getText().toString());
+
+                    mainActivityIntent.putExtra("email", etEmail.getText().toString());
                     startActivity(mainActivityIntent);
                 }
             }
         });
     }
 
-    protected int LoginUser(String email, String password)
-    {
+    private int LoginUser(String email, String password) {
         SQLiteDatabase objDb = new DatabaseHelper(LoginActivity.this).getReadableDatabase();
-        Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable,new String[]{DatabaseModelHelper.UsersEmail,DatabaseModelHelper.UsersPassword},DatabaseModelHelper.UsersEmail+"=?",
-                new String[]{email},"","","");
+        Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable, new String[]{DatabaseModelHelper.UsersEmail, DatabaseModelHelper.UsersPassword}, DatabaseModelHelper.UsersEmail + "=?",
+                new String[]{email}, "", "", "");
 
-        if(cursor.getCount()>0)
-        {
+        if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             String dbUserMail = cursor.getString(0);
             String dbUserPassword = cursor.getString(1);
 
             cursor.close();
             objDb.close();
-            if(password.equals(dbUserPassword))
-            {
+            if (password.equals(dbUserPassword)) {
                 return 1;
-            }
-            else
-            {
+            } else {
                 return 0;
             }
         }
 
         return -1;
     }
-/*    protected String LoginUser(String email)
-    {
-        SQLiteDatabase objDb = new DatabaseHelper(LoginActivity.this).getReadableDatabase();
-        Cursor cursor = objDb.query(DatabaseModelHelper.UsersTable,new String[]{DatabaseModelHelper.UsersEmail},DatabaseModelHelper.UsersEmail+"=?",
-                new String[]{email},"","","");
-        if(cursor.getCount()>0)
-        {
-            cursor.moveToFirst();
-            String dbUsersName = cursor.getString(0);
-            cursor.close();
-            objDb.close();
-            return dbUsersName;
-        }
-        return "-1";
-    }*/
 
     public void setupUI(View view) {
 

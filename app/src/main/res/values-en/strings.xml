@@ -17,4 +17,9 @@
     <string name="menu_foods">Ushqimet</string>
     <string name="menu_exercises">Ushtrimet</string>
     <string name="menu_profile">Profili</string>
+    <string name="btn_capture">Kamera</string>
+    <string name="tv_week">Java</string>
+    <string name="tv_weight">Pesha</string>
+    <string name="btn_submit">Ruaj</string>
+    <string name="btn_check">Check</string>
 </resources>
