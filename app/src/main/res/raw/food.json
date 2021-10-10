@@ -1,9 +1,9 @@
 [
   {
     "id": "coles-muslie-almond",
-    "name": "Muesli (Almond)",
+    "name": "Grosh",
     "url": "https://i.pinimg.com/originals/29/9c/a8/299ca88eb971b6f973d05ca336040028.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 1560,
       "protein": 12.3,
       "fat": 9.9,
@@ -13,13 +13,13 @@
       "dietary_fibre": 13,
       "sodium": 6
     },
-    "tags": "grain, carb"
+    "tags": "Perime"
   },
   {
     "id": "coles-rolled-oats-wholegrain",
-    "name": "Wholegrain Rolled Oats",
+    "name": "Gullash",
     "url": "https://th.bing.com/th/id/R.1f09e4e1653729bcab6d94da91c0f03e?rik=IePfHiTZ%2fGFrlA&pid=ImgRaw&r=0",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 1680,
       "protein": 13.3,
       "fat": 9.8,
@@ -30,11 +30,11 @@
       "sodium": 7,
       "potassium": 313
     },
-    "tags": "grain, carb"
+    "tags": "Mish"
   },
   {
     "id": "sanitarium-almond-milk",
-    "name": "Almond Milk",
+    "name": "Flija",
     "url": "https://smakowity.pl/storage/7160/flija.jpg",
     "nutrition-per-100ml": {
       "energy": 130,
@@ -52,11 +52,11 @@
       "calcium": 75,
       "vitamin-e": 0.4
     },
-    "tags": "snack"
+    "tags": "Brumera"
   },
   {
     "id": "coles-soy-milk-regular",
-    "name": "Soy Milk",
+    "name": "Rizoto",
     "url": "https://th.bing.com/th/id/OIP.sa7HHuzcVazBf7Llit47pQHaFj?pid=ImgDet&rs=1",
     "nutrition-per-100ml": {
       "energy": 244,
@@ -71,13 +71,13 @@
       "dietary_fibre": 0,
       "sodium": 47
     },
-    "tags": "canola-oil, maltodextrin"
+    "tags": "Drithera"
   },
   {
     "id": "simply-better-organic-tofu-plain-firm",
     "name": "Firm Tofu",
     "url": "https://www.najbolji-recepti.com/wp-content/uploads/2015/01/krompir-paprikas-sa-junetinom1.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 615,
       "protein": 15.9,
       "fat": 8.8,
@@ -93,9 +93,9 @@
   },
   {
     "id": "sss-hummus-dip",
-    "name": "Hummus",
+    "name": "Qorb me patate",
     "url": "https://i.ytimg.com/vi/ERusIBRog7A/maxresdefault.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 709,
       "protein": 8.4,
       "fat": 10.8,
@@ -105,13 +105,13 @@
       "sugars": 0.6,
       "sodium": 378
     },
-    "tags": "legume, snack"
+    "tags": "Perime, leng"
   },
   {
     "id": "coles-hummus-lite",
-    "name": "Hummus (Lite)",
+    "name": "Burek",
     "url": "https://i.pinimg.com/736x/47/66/b8/4766b8207aab1628b9a5c1c1a67d8cc7.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 696,
       "protein": 5.0,
       "fat": 9.3,
@@ -120,13 +120,13 @@
       "sugars": 0.6,
       "sodium": 354
     },
-    "tags": "legume, snack"
+    "tags": "Brumera, mish"
   },
   {
     "id": "coles-hummus",
-    "name": "Hummus",
+    "name": "Tave pule",
     "url": "https://i.pinimg.com/originals/3b/f4/cc/3bf4ccedaa0a4261067caa8365bece9d.png",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 1091,
       "protein": 5.6,
       "fat": 19.2,
@@ -135,13 +135,13 @@
       "sugars": 0.6,
       "sodium": 347
     },
-    "tags": "legume, snack"
+    "tags": "mish"
   },
   {
     "id": "sanitarium-natural-peanut-butter-crunchy",
-    "name": "Peanut Butter",
+    "name": "Gjize",
     "url": "https://i0.wp.com/lh4.ggpht.com/_zTCbpIKK2Ss/S_gnTdEyTOI/AAAAAAAAAeg/ULAI6npoWfY/s800/quichelorraine.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 2580,
       "protein": 28,
       "fat": 50,
@@ -157,13 +157,13 @@
       "vitamin-b3": 12,
       "magnesium": 150
     },
-    "tags": "snack, nut"
+    "tags": "bylmet"
   },
   {
     "id": "macro-organic-peanut-butter-crunchy",
-    "name": "Peanut Butter",
+    "name": "Peshk",
     "url": "https://www.artigatimit.com/wp-content/uploads/2012/03/peshk-patate-video-receta-artigatimit-tave-fish.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 2670,
       "protein": 28.4,
       "fat": 50.9,
@@ -175,13 +175,13 @@
       "sugars": 5.5,
       "sodium": 1
     },
-    "tags": "snack, nut"
+    "tags": "misht"
   },
   {
     "id": "macro-organic-tahini-unhulled",
-    "name": "Tahini",
+    "name": "Karkaleca",
     "url": "https://gatimeshqiptare.com/wp-content/uploads/2018/02/1-4-1.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 2760,
       "protein": 25.6,
       "fat": 57.3,
@@ -193,13 +193,13 @@
       "sugars": 1,
       "sodium": 7
     },
-    "tags": "seed"
+    "tags": "fruta deti"
   },
   {
     "id": "coles-butter-beans-organic",
-    "name": "Butter Beans",
+    "name": "Mantia",
     "url": "https://media.merrjep.com/Image/905cf9cc-f34e-49ad-aac9-055aaf6ddd01/20190210/false/false/1280/960/-pergadisum--Ushqime-tradiconale-shqiptare-.jpeg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 384,
       "protein": 7.4,
       "fat": 0.9,
@@ -209,13 +209,13 @@
       "dietary_fibre": 7,
       "sodium": 300
     },
-    "tags": "legume"
+    "tags": "brumera"
   },
   {
     "id": "coles-red-kidney-beans-organic",
-    "name": "Kidney Beans",
+    "name": "Qebap",
     "url": "https://i.pinimg.com/736x/3b/96/54/3b9654ea59297a6dec564e19e6a797f6.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 370,
       "protein": 5.2,
       "fat": 0.4,
@@ -225,13 +225,13 @@
       "dietary_fibre": 7.3,
       "sodium": 268
     },
-    "tags": "legume"
+    "tags": "mish"
   },
   {
     "id": "coles-chick-peas-organic",
-    "name": "Chickpeas",
+    "name": "Speca ne tave",
     "url": "https://www.albinfo.ch/wp-content/uploads/2016/09/speca-me-gjize.jpg",
-    "nutrition-per-100g": {
+    "nutrition": {
       "energy": 391,
       "protein": 8,
       "fat": 0.5,
@@ -241,6 +241,6 @@
       "dietary_fibre": 7,
       "sodium": 295
     },
-    "tags": "legume"
+    "tags": "perime, bylmet"
   }
 ]

@@ -1,5 +1,6 @@
 package fiek.unipr.stayfit.adapters;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,11 +51,20 @@ public class FoodsListAdapter extends RecyclerView.Adapter<FoodsListAdapter.View
         return new ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull FoodsListAdapter.ViewHolder holder, int position) {
         holder.foodName.setText(foodsModelList.get(position).getName());
         holder.foodTag.setText(foodsModelList.get(position).getTags());
-        holder.foodNutrition.setText("Nutritions: " + foodsModelList.get(position).getNutritions());
+
+        try{
+            String nutritiveValues = foodsModelList.get(position).getNutritions().getSomeValues();
+            holder.foodNutrition.setText("Nutritions: " + nutritiveValues);
+        } catch (Exception e) {
+            holder.foodNutrition.setText("Nutritions: " + "not provided!");
+            e.printStackTrace();
+        }
+
 
         Glide.with(holder.foodImageUrl)
                 .load(foodsModelList.get(position).getUrl())

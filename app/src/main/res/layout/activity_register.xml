@@ -8,6 +8,7 @@
     android:padding="16dp"
     tools:context=".activities.RegisterActivity"
     android:background="@drawable/ic_background">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -22,12 +23,12 @@
             android:layout_centerHorizontal="true" />
 
         <RelativeLayout
+            android:id="@+id/realtive_id1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/realtive_id1"
+            android:layout_below="@+id/imgIcon"
             android:background="@drawable/register_background"
-            android:padding="10dp"
-            android:layout_below="@+id/imgIcon">
+            android:padding="10dp">
 
 
             <TextView
@@ -41,11 +42,11 @@
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvName"
-                android:labelFor="@+id/tvName"
+                android:background="@drawable/bg_edittext_icon"
                 android:imeOptions="actionNext"
-                android:inputType="textCapWords" />
+                android:inputType="textCapWords"
+                android:labelFor="@+id/tvName" />
 
             <TextView
                 android:id="@+id/tvLastName"
@@ -59,8 +60,8 @@
                 android:id="@+id/etlastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvLastName"
+                android:background="@drawable/bg_edittext_icon"
                 android:imeOptions="actionNext"
                 android:inputType="textCapWords" />
 
@@ -76,11 +77,11 @@
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvEmail"
+                android:background="@drawable/bg_edittext_icon"
                 android:imeOptions="actionNext"
-                android:labelFor="@+id/tvEmail"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:labelFor="@+id/tvEmail" />
 
             <TextView
                 android:id="@+id/tvPassword"
@@ -94,8 +95,8 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_edittext_icon"
                 android:layout_below="@+id/tvPassword"
+                android:background="@drawable/bg_edittext_icon"
 
                 android:imeOptions="actionNext"
                 android:inputType="textPassword" />
@@ -132,15 +133,15 @@
             </RadioGroup>
 
             <Button
+                android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:id="@+id/btnRegister"
                 android:layout_below="@id/radioSex"
+                android:layout_alignParentEnd="true"
                 android:background="@drawable/button_background"
 
-                android:layout_alignParentEnd="true"
-                android:text="@string/btn_register"></Button>
+                android:text="@string/btn_register"
+                android:textSize="22sp"></Button>
 
         </RelativeLayout>
 

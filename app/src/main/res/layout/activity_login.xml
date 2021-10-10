@@ -9,7 +9,8 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".activities.LoginActivity"
-    android:background="@drawable/ic_background">
+    android:background="@drawable/ic_background"
+    >
 
     <ImageView
         android:layout_width="40dp"

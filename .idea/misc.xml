@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/drawable/ic_display.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/drawable/ic_foods.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/drawable/ic_profile.xml" value="0.22239583333333332" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_display.xml" value="0.175" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_login.xml" value="0.2828125" />
+        <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_register.xml" value="0.2828125" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/activity_show.xml" value="0.128125" />
         <entry key="..\:/Users/Ali Tafaj/AndroidStudioProjects/stay-fit/app/src/main/res/layout/fragment_foods.xml" value="0.1" />
