@@ -1,12 +1,17 @@
 package fiek.unipr.stayfit.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,29 +23,36 @@ import android.widget.Toast;
 import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 
+import com.bumptech.glide.load.resource.bitmap.BitmapEncoder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.io.ByteArrayOutputStream;
+
 import fiek.unipr.stayfit.R;
+import fiek.unipr.stayfit.StayFitApp;
+import fiek.unipr.stayfit.activities.MainActivity;
+import fiek.unipr.stayfit.activities.UserActivity;
 
 public class profileFragment extends Fragment {
+    private static final String TAG = "profileFragment";
     Button captureBtn;
     ImageView iv_capture;
     View view;
     TextView tvProfileName;
+    FloatingActionButton floatingBtn;
 
+    private SharedPreferences preferences;
     private static final int Image_Capture_Code = 1;
 
     public profileFragment() {
         // Required empty public constructor
     }
 
-    public static profileFragment newInstance(String param1, String param2) {
-        profileFragment fragment = new profileFragment();
-        Bundle args = new Bundle();
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        preferences = getContext().getSharedPreferences("Image", Context.MODE_PRIVATE);
 
     }
 
@@ -49,28 +61,31 @@ public class profileFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_profile, container, false);
-        captureBtn = (Button)view.findViewById(R.id.captureBtn);
-        //iv_capture = getActivity().findViewById(R.id.iv_capture);
-        iv_capture = (ImageView)view.findViewById(R.id.iv_capture);
+        captureBtn = view.findViewById(R.id.captureBtn);
+        floatingBtn = view.findViewById((R.id.floatingBtn));
+        iv_capture = view.findViewById(R.id.iv_capture);
 
         Bundle args = getArguments();
         try {
             String myString = args.getString("email");
             tvProfileName.setText(myString);
 
-        }
-        catch (Exception e){
-            Toast.makeText(getActivity(),"empty arg", Toast.LENGTH_LONG).show();
-            //askCameraPremission();
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "empty arg", Toast.LENGTH_LONG).show();
         }
 
         captureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cInt,Image_Capture_Code);
-                //Toast.makeText(getActivity(), "Camera button is clicked", Toast.LENGTH_LONG).show();
-                //askCameraPremission();
+                startActivityForResult(cInt, Image_Capture_Code);
+            }
+        });
+        floatingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), UserActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -81,41 +96,42 @@ public class profileFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
         if (requestCode == Image_Capture_Code) {
             if (resultCode == RESULT_OK) {
                 Bitmap bp = (Bitmap) data.getExtras().get("data");
-                iv_capture.setImageBitmap(bp);
+                String encoded = bitMapToString(bp, data);
+                saveImgToSharedPref(encoded);
+                bp.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                byte[] b = baos.toByteArray();
+                String prefImg = preferences.getString("image", "");
+                encoded = Base64.encodeToString(b, Base64.DEFAULT);
+                byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
+
+
+                iv_capture.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));//.setImageBitmap(bp);
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_LONG).show();
             }
         }
     }
 
-/*
-    private void askCameraPremission() {
-        if(ContextCompat.checkSelfPermission(this.getActivity(),Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this.getActivity(),new String[] {Manifest.permission.CAMERA}, CAMERA_PERM_CODE);
-
-        }else {
-            openCamera();
-        }
+    private String bitMapToString(Bitmap bitmap, Intent data) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap = (Bitmap) data.getExtras().get("data");
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] b = byteArrayOutputStream.toByteArray();
+        String encoded = Base64.encodeToString(b, Base64.DEFAULT);
+        return encoded;
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull  int[] grantResults) {
+    public void saveImgToSharedPref(String image) {
 
-        if(requestCode == CAMERA_PERM_CODE){
-            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                openCamera();
-            }else {
-                Toast.makeText(getActivity(), "Camera Permission is Required to Use camera.", Toast.LENGTH_SHORT).show();
-            }
-        }
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("image", image).commit();
+        String pref = preferences.getString("image", "");
+        Log.d(TAG, "saveImgToSharedPref: " + preferences.getString("image", ""));
+
     }
-
-    private void openCamera() {
-        Toast.makeText(getActivity(), "Camera open request", Toast.LENGTH_SHORT).show();
-
-    }*/
-
 }
+

@@ -44,7 +44,7 @@ public class UserActivity extends AppCompatActivity {
 
                 progressMap.put("week", week);
                 progressMap.put("weight", weight);
-                root.setValue(progressMap);
+                root.push().setValue(progressMap);
 
             }
         });
