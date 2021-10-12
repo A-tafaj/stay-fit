@@ -10,11 +10,10 @@
         android:name="fiek.unipr.stayfit.fragments.foodsFragment"
         android:label="fragment_foods"
         tools:layout="@layout/fragment_foods" />
-    <fragment
-        android:id="@+id/exercisesFragment"
-        android:name="fiek.unipr.stayfit.fragments.exercisesFragment"
-        android:label="fragment_exercises"
-        tools:layout="@layout/fragment_exercises" />
+    <activity
+        android:id="@+id/fitActivity"
+        android:name="fiek.unipr.stayfit.activities.fitActivity"
+        android:label="activity_fit"/>
     <fragment
         android:id="@+id/profileFragment"
         android:name="fiek.unipr.stayfit.fragments.profileFragment"

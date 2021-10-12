@@ -16,13 +16,25 @@
     </queries>
 
     <application
+        android:name=".StayFitApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".StayFitApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StayFit">
+        <activity
+            android:name=".activities.WorkoutDetails"
+            android:exported="true" />
+        <activity
+            android:name=".activities.fitActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ExercisesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ExercisesActivity"
+            android:exported="true" />
         <activity android:name=".activities.DisplayActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,10 +45,8 @@
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.RegisterActivity" />
-        <activity android:name=".activities.ShowActivity"></activity>
-        <activity android:name=".activities.UserActivity">
-
-        </activity>
+        <activity android:name=".activities.ShowActivity" />
+        <activity android:name=".activities.UserActivity" />
     </application>
 
 </manifest>
