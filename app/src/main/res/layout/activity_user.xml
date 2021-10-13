@@ -33,6 +33,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
             android:orientation="horizontal">
             <Button
                 android:layout_width="wrap_content"
@@ -40,16 +41,7 @@
                 android:layout_weight="1"
                 android:text="Submit"
                 android:id="@+id/button"></Button>
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Read"
-                android:layout_weight="1"
-                android:id="@+id/button2"></Button>
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

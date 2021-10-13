@@ -1,14 +1,14 @@
 package fiek.unipr.stayfit.fragments;
 
+import static android.app.Activity.RESULT_CANCELED;
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
@@ -20,17 +20,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.app.Activity.RESULT_CANCELED;
-import static android.app.Activity.RESULT_OK;
+import androidx.fragment.app.Fragment;
 
-import com.bumptech.glide.load.resource.bitmap.BitmapEncoder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayOutputStream;
 
 import fiek.unipr.stayfit.R;
-import fiek.unipr.stayfit.StayFitApp;
-import fiek.unipr.stayfit.activities.MainActivity;
 import fiek.unipr.stayfit.activities.UserActivity;
 
 public class profileFragment extends Fragment {
@@ -52,8 +48,8 @@ public class profileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        preferences = getContext().getSharedPreferences("Image", Context.MODE_PRIVATE);
 
+        preferences = getContext().getSharedPreferences("Image", Context.MODE_PRIVATE);
     }
 
     @Override
@@ -64,6 +60,13 @@ public class profileFragment extends Fragment {
         captureBtn = view.findViewById(R.id.captureBtn);
         floatingBtn = view.findViewById((R.id.floatingBtn));
         iv_capture = view.findViewById(R.id.iv_capture);
+
+        String pref = preferences.getString("image", null);
+
+        if (pref != null) {
+            byte[] imageAsBytes = Base64.decode(pref.getBytes(), Base64.DEFAULT);
+            iv_capture.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
+        }
 
         Bundle args = getArguments();
         try {
@@ -88,26 +91,17 @@ public class profileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         return view;
-
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
         if (requestCode == Image_Capture_Code) {
             if (resultCode == RESULT_OK) {
-                Bitmap bp = (Bitmap) data.getExtras().get("data");
-                String encoded = bitMapToString(bp, data);
+                String encoded = bitMapToString(data);
                 saveImgToSharedPref(encoded);
-                bp.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                byte[] b = baos.toByteArray();
-                String prefImg = preferences.getString("image", "");
-                encoded = Base64.encodeToString(b, Base64.DEFAULT);
-                byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
 
+                byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
 
                 iv_capture.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));//.setImageBitmap(bp);
             } else if (resultCode == RESULT_CANCELED) {
@@ -116,22 +110,21 @@ public class profileFragment extends Fragment {
         }
     }
 
-    private String bitMapToString(Bitmap bitmap, Intent data) {
+    private String bitMapToString(Intent data) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap = (Bitmap) data.getExtras().get("data");
+        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
         byte[] b = byteArrayOutputStream.toByteArray();
         String encoded = Base64.encodeToString(b, Base64.DEFAULT);
+
         return encoded;
     }
 
     public void saveImgToSharedPref(String image) {
-
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("image", image).commit();
         String pref = preferences.getString("image", "");
-        Log.d(TAG, "saveImgToSharedPref: " + preferences.getString("image", ""));
-
+        Log.d(TAG, "saveImgToSharedPref: " + pref);
     }
 }
 

@@ -25,10 +25,6 @@ public class FoodsListAdapter extends RecyclerView.Adapter<FoodsListAdapter.View
         this.foodsModelList = foodsModelList;
     }
 
-    public void setFoodsModelList(List<FoodsModel> foodsModelList) {
-        this.foodsModelList = foodsModelList;
-    }
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView foodName;
         TextView foodTag;
@@ -64,7 +60,6 @@ public class FoodsListAdapter extends RecyclerView.Adapter<FoodsListAdapter.View
             holder.foodNutrition.setText("Nutritions: " + "not provided!");
             e.printStackTrace();
         }
-
 
         Glide.with(holder.foodImageUrl)
                 .load(foodsModelList.get(position).getUrl())

@@ -1,8 +1,9 @@
 package fiek.unipr.stayfit.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -16,10 +17,9 @@ import java.util.HashMap;
 import fiek.unipr.stayfit.R;
 
 public class UserActivity extends AppCompatActivity {
-
-
+    private Animation scale;
     private EditText etWeek, etWeight;
-    private Button btnSubmit, btnRead;
+    private Button btnSubmit;
 
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
     private DatabaseReference root = db.getReference().child("weekNweight");
@@ -32,7 +32,11 @@ public class UserActivity extends AppCompatActivity {
         etWeek = findViewById(R.id.etWeek);
         etWeight = findViewById(R.id.etWeight);
         btnSubmit = findViewById(R.id.button);
-        btnRead = findViewById(R.id.button2);
+
+        btnSubmit.setAlpha(0f);
+        btnSubmit.animate().alpha(1f).setDuration(2000);
+
+        scale = AnimationUtils.loadAnimation(this, R.anim.scal_button_animation);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,14 +49,6 @@ public class UserActivity extends AppCompatActivity {
                 progressMap.put("week", week);
                 progressMap.put("weight", weight);
                 root.push().setValue(progressMap);
-
-            }
-        });
-
-        btnRead.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(UserActivity.this, ShowActivity.class));
             }
         });
     }

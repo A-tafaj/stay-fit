@@ -1,6 +1,6 @@
 package fiek.unipr.stayfit.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static fiek.unipr.stayfit.activities.RegisterActivity.hideSoftKeyboard;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -13,11 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static fiek.unipr.stayfit.activities.RegisterActivity.hideSoftKeyboard;
+import androidx.appcompat.app.AppCompatActivity;
 
+import fiek.unipr.stayfit.R;
 import fiek.unipr.stayfit.helpers.DatabaseHelper;
 import fiek.unipr.stayfit.helpers.DatabaseModelHelper;
-import fiek.unipr.stayfit.R;
 
 public class LoginActivity extends AppCompatActivity {
 

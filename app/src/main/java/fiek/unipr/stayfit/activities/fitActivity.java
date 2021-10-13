@@ -29,11 +29,11 @@ import java.util.concurrent.ExecutionException;
 
 import fiek.unipr.stayfit.R;
 import fiek.unipr.stayfit.adapters.ImageAdapter;
-import fiek.unipr.stayfit.fragments.PictureFragment;
 import fiek.unipr.stayfit.adapters.RecyclerViewExerciseAdapter;
-import fiek.unipr.stayfit.models.Workouts;
 import fiek.unipr.stayfit.adapters.WorkoutsAdapter;
+import fiek.unipr.stayfit.fragments.PictureFragment;
 import fiek.unipr.stayfit.models.Exercises;
+import fiek.unipr.stayfit.models.Workouts;
 
 public class fitActivity extends AppCompatActivity {
 

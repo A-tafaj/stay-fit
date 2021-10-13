@@ -7,12 +7,14 @@ An android app that will display food nutritional values, advices to maintain a 
    1. Users can register and sign-in
    2. Users can see exercises
    3. Users can see foods nutritions
-   4. Users can add their weight for every Week or desired date( data is saved and read from Firebase)
+   4. Users can add their weight for every Week or desired date (data is saved in Firebase Realtime Database)
    5. User can use the camera to take his profile picture
    6. Data from database is placed in dynamic lists with RecyclerView
-   7. External libraries are userd (get image form url, parse json, etc.)
+   7. External libraries are used (get image form url, parse json, etc.)
    8. Project uses multiple layouts, Relative, Linear, Constraint Layout, Fragments
    9. Project uses basic and custom animations
+   10. AsyncTask used in DisplayActivity
+   11. Image saved with SharedPreferences
     
 
 ## Getting Started

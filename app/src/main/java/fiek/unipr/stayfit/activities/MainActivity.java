@@ -25,10 +25,8 @@ public class MainActivity extends AppCompatActivity {
         args.putString("email", getIntent().getExtras().getString("email"));
         fragment.setArguments(args);
 
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
 
         fragmentTransaction.add(R.id.tvProfileName, fragment);
 

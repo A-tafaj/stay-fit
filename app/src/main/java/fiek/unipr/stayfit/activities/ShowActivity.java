@@ -1,6 +1,5 @@
 package fiek.unipr.stayfit.activities;
 
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;

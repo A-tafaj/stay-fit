@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -100,5 +101,15 @@ public class RegisterActivity extends AppCompatActivity {
                 setupUI(innerView);
             }
         }
+    }
+
+    private boolean validatEmail(EditText editText) {
+        String emailInput = etEmail.getText().toString();
+
+        if (!emailInput.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
+            editText.setBackgroundColor(990000);
+            return true;
+        }
+        return true;
     }
 }
