@@ -25,15 +25,19 @@
         android:theme="@style/Theme.StayFit">
         <activity
             android:name=".activities.WorkoutDetails"
+            android:parentActivityName=".activities.fitActivity"
             android:exported="true" />
         <activity
             android:name=".activities.fitActivity"
+            android:parentActivityName=".activities.ShowActivity"
             android:exported="true" />
         <activity
             android:name=".activities.ExercisesActivity"
+            android:parentActivityName=".activities.fitActivity"
             android:exported="true" />
         <activity
             android:name=".activities.ExercisesActivity"
+            android:parentActivityName=".activities.fitActivity"
             android:exported="true" />
         <activity android:name=".activities.DisplayActivity">
             <intent-filter>
