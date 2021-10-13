@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
@@ -58,9 +60,13 @@ public class RegisterActivity extends AppCompatActivity {
             try {
                 long id1 = objDB.insert(DatabaseModelHelper.UsersTable, null, contentValues);
                 if (id1 > 0) {
-                    Toast.makeText(RegisterActivity.this, getString(R.string.confirmation_message), Toast.LENGTH_LONG).show();
-                    Intent loginActivityIntent = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(loginActivityIntent);
+                    if (validateEmail(etEmail)) {
+                        Toast.makeText(RegisterActivity.this, getString(R.string.confirmation_message), Toast.LENGTH_LONG).show();
+                        Intent loginActivityIntent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        startActivity(loginActivityIntent);
+                    } else {
+                        etEmail.setError("Not an email!");
+                    }
                 }
             } catch (Exception e) {
                 Toast.makeText(RegisterActivity.this, getString(R.string.error_message), Toast.LENGTH_LONG).show();
@@ -103,13 +109,13 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    private boolean validatEmail(EditText editText) {
-        String emailInput = etEmail.getText().toString();
+    private boolean validateEmail(EditText editText) {
+        String emailInput = editText.getText().toString();
 
         if (!emailInput.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
-            editText.setBackgroundColor(990000);
             return true;
+        } else {
+            return false;
         }
-        return true;
     }
 }

@@ -98,21 +98,20 @@ public class profileFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == Image_Capture_Code) {
             if (resultCode == RESULT_OK) {
-                String encoded = bitMapToString(data);
+
+                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                String encoded = bitMapToString(bitmap);
                 saveImgToSharedPref(encoded);
 
-                byte[] imageAsBytes = Base64.decode(encoded.getBytes(), Base64.DEFAULT);
-
-                iv_capture.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));//.setImageBitmap(bp);
+                iv_capture.setImageBitmap(bitmap);
             } else if (resultCode == RESULT_CANCELED) {
                 Toast.makeText(getActivity(), "Cancelled", Toast.LENGTH_LONG).show();
             }
         }
     }
 
-    private String bitMapToString(Intent data) {
+    private String bitMapToString(Bitmap bitmap) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
         byte[] b = byteArrayOutputStream.toByteArray();
         String encoded = Base64.encodeToString(b, Base64.DEFAULT);
